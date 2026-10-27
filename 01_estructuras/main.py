@@ -22,8 +22,26 @@ Al terminar: git commit -m "Resuelve ejercicio 01".
 """
 
 def resumir_ventas(ventas):
-    # TODO: implementa lo solicitado y devuelve el resultado.
-    pass
+    productos = set()
+    por_producto = {}
+    unidades = 0
+
+    # Se define las variables para antes del ciclo
+
+    for producto, cantidad in ventas:
+        productos.add(producto)
+        unidades += cantidad
+        por_producto[producto] = por_producto.get(producto, 0) + cantidad
+
+    # Se crea el ciclo para "producto" y se agregan unidades vendidas
+
+    return {
+        "productos": productos,
+        "unidades": unidades,
+        "por_producto": por_producto,
+    }
+
+    # Se retornan los valores de productos vendidos, unidades totales y unidades vendidas por producto
 
 
 # Ejemplo de uso: inicialmente imprime None porque falta la implementación.
