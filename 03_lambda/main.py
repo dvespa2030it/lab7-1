@@ -20,10 +20,16 @@ Al terminar: git commit -m "Resuelve ejercicio 03".
 def calcular_importes(precios):
     aplicar_recargo = lambda precio: round(precio * 1.10, 2)
     importes = []
+
+    # Se define calcular_importes con un recargo del 10% 
+
     for precio in precios:
         importes.append(aplicar_recargo(precio))
+
+    #Se crea un ciclo for para agregar el nuevo precio con el recargo
     return importes
 
+    #Se retorna el nuevo importe
 
 # Esperado: [11.0, 22.0, 38.5]
 precios = [10, 20, 35]
