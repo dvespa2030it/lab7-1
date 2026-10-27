@@ -23,11 +23,24 @@ Al terminar: git commit -m "Resuelve ejercicio 02".
 """
 
 def preparar_catalogo(productos):
-    # TODO: implementa lo solicitado y devuelve el resultado.
-    pass
+    return {
+        "disponibles": [
+            producto["nombre"]
+            for producto in productos
+            if producto["precio"] <= 20
+        ],
+        "precios": {
+            producto["nombre"]: producto["precio"]
+            for producto in productos
+        },
+        "categorias": {
+            producto["categoria"]
+            for producto in productos
+        },
+    }
 
 
-# Ejemplo de uso: inicialmente imprime None porque falta la implementación.
+# Imprime el catálogo esperado por el enunciado.
 productos = [
     {"nombre": "cafe", "precio": 10, "categoria": "bebida"},
     {"nombre": "torta", "precio": 25, "categoria": "postre"},
@@ -35,4 +48,5 @@ productos = [
 ]
 print(preparar_catalogo(productos))
 
-# TODO: añade otro ejemplo con print y su resultado esperado en un comentario.
+# Se esperan las tres estructuras vacías.
+print(preparar_catalogo([]))
