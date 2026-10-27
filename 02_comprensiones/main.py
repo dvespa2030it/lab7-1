@@ -29,16 +29,22 @@ def preparar_catalogo(productos):
             for producto in productos
             if producto["precio"] <= 20
         ],
+
+        # Hacemos la definicion de productos con su diccionario para preparar el catalogo
+
         "precios": {
             producto["nombre"]: producto["precio"]
             for producto in productos
         },
+
+        # Retorna el nombre de producto con su precio
+
         "categorias": {
             producto["categoria"]
             for producto in productos
         },
     }
-
+        #Retorna la categoria del producto
 
 # Imprime el catálogo esperado por el enunciado.
 productos = [
